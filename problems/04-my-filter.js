@@ -27,7 +27,7 @@ function myFilter(array, cb) {
         if (cb(num)) {
             arr.push(num)
         }    
-        
+
     }
     return arr
 
