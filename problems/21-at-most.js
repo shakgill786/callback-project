@@ -21,7 +21,11 @@ console.log(atMost(['boat', 'arc', 'cat', 'car', 'academy'], 1, startsWithA));  
 *******************************************************************************/
 
 function atMost(array, max, cb) {
-  // Your code here 
+  
+  let filteredArr = array.filter(cb)
+
+  return filteredArr.length <= max
+
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
