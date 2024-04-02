@@ -23,7 +23,14 @@ console.log(result3); // -1
 *******************************************************************************/
 
 function firstIndex(array, cb) {
-  // Your code here 
+    let resIndex = -1;
+
+    array.forEach((el, i) => {
+      if (cb(el) && resIndex === -1){
+        resIndex = i;
+      }
+    });
+    return resIndex;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
