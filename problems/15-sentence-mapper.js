@@ -25,9 +25,15 @@ let result2 = sentenceMapper("this is pretty cool right", removeVowels);
 console.log(result2); // 'ths s prtty cl rght'
 *******************************************************************************/
 
-let sentenceMapper = function (sentence, cb) {
-  // Your code here 
-};
+const sentenceMapper = (sentence, callback) => sentence.split(" ").map(callback).join(" ");
+
+let result1 = sentenceMapper("what is the answer?", word => word.toUpperCase() + "!");
+console.log(result1); // 'WHAT! IS! THE! ANSWER?!'
+
+let removeVowels = word => word.split('').filter(char => !"aeiou".includes(char)).join('');
+
+let result2 = sentenceMapper("this is pretty cool right", removeVowels);
+console.log(result2); // 'ths s prtty cl rght'
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
