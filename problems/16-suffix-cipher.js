@@ -32,8 +32,37 @@ console.log(suffixCipher('incremental progress is very instrumental', cipher2));
 *******************************************************************************/
 
 function suffixCipher(sentence, cipher) {
-  // Your code here 
+  const words = sentence.split(' ');
+  const modifiedWords = words.map(word => {
+    for (const suffix in cipher) {
+      if (word.endsWith(suffix)) {
+        return cipher[suffix](word);
+      }
+    }
+    return word;
+  });
+  return modifiedWords.join(' ');
 }
+
+let cipher1 = {
+    ly: function(word) {
+        return word.slice(0, -2) + 'ee';
+    },
+    ize: function(word) {
+        return word.slice(0, -1) + 'r';
+    }
+};
+console.log(suffixCipher('quietly and gently visualize', cipher1));
+
+let cipher2 = {
+    tal: function(word) {
+        return word.toUpperCase();
+    },
+    s: function(word) {
+        return word + 'th';
+    }
+};
+console.log(suffixCipher('incremental progress is very instrumental', cipher2));
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
